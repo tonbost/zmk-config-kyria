@@ -16,22 +16,23 @@
 	keymap {
 		compatible = "zmk,keymap";
 
-		default_layer {
+		DEFAULT {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   |   \  |
 // |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   | L SHIFT | L SHIFT |  | RET     | L SHIFT |  N   |  M    |  ,    |  .   |   /   | CTRL |
-//                     | GUI  | DEL  | RET  |  MO1	  |   SPACE |  |  SPACE  |  SPACE  | TAB  | BSPC  | R-ALT |
+//                     | GUI  | DEL  | RET  |  MO1	  |   SPACE |  |  SPACE  |  MO2    | TAB  | BSPC  | R-ALT |
 			bindings = <
 	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                 &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
 	&kp TAB   &kp A &kp S &kp D &kp F &kp G                                                 &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
 	&kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp LSHFT &kp LSHFT        &kp RET    &kp LSHFT &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                 &kp LGUI &kp DEL &kp RET &mo 1   &kp SPACE        &kp SPACE  &mo 2  &kp TAB &kp BSPC &kp RALT
+	                &kp LGUI &kp DEL &kp RET &mo 1   &kp SPACE        &kp SPACE  &mo 2  &kp TAB &kp BSPC &kp RALT
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
-		lower_layer {
+		
+		LOWER {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |                       |  6  |  7  |  8  |  9  |  0  | BKSP |
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |                       | LFT | DWN |  UP | RGT |     |      |
@@ -45,7 +46,7 @@
             >;
         };
 
-        raise_layer {
+        RAISE {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |                       |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL |     |     |     |     |     |                       |  -  |  =  |  [  |  ]  |  \  |  `   |
