@@ -23,7 +23,7 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  Q  |  W  |  E   |  R   |  T     |                                          |  Y   |  U    |  I    |  O   |   P   | BSPC |
 // |  TAB  |  A  |  S  |  D   |  F   |  G     |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B     |  COPY   |  -  _   |  |  BSLH   |  PASTE  |  N   |  M    |  ,    |  .   |   /   | RET  |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B     |  COPY   |  -  _   |  |  \ "|"  |  PASTE  |  N   |  M    |  ,    |  .   |   /   | RET  |
 //                     | GUI  | LALT | LCTRL  |  MO1	| SPACE   |  |  SPACE  |  MO2    | RCTRL| RALT  | GUI   |
 			
 			bindings = <
@@ -38,15 +38,15 @@
 		lower_layer {
 			label = "Lower";
 // -----------------------------------------------------------------------------------------
-// |  ESC |  1  |  2  |  3  |  4  |  5  |                           |  F1 |  F2 |  F3 |  F4 |  F5 | BKSP |
+// |  ESC |  1  |  2  |  3  |  4  |  5  |                           |  F1 |  F2 |  F3 |  F4 |  F5 | F6   |
 // | PSCRN|  6  |  7  |  8  |  9  |  0  |                           | LFT | DWN |  UP | RGT |     | "|"  |
-// | SHFT |     |     |     |     |     |    |     ||       |       |     |     |     |     |     |      |
+// | SHFT |     |     |     |     |     |    |     ||       |       |  F7 |  F8 |  F9 | F10 | F11 | F12  |
 //                    | GUI |     |     |    | SPC || PG UP | PG DN |     |     | DEL |
                         
                         bindings = <
-   &kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                                                 &kp F1    &kp F2   &kp F3   &kp F4    &kp F5  &kp BSPC
+   &kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                                                 &kp F1    &kp F2   &kp F3   &kp F4    &kp F5  &kp F6
    &kp PSCRN  &kp N6       &kp N7       &kp N8       &kp N9       &kp N0                                                 &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &none   &kp PIPE
-   &kp LSHFT  &none        &none        &none        &none        &none     &none    &none       &none       &trans      &none     &none    &none    &none     &none   &trans
+   &kp LSHFT  &none        &none        &none        &none        &none     &none    &none       &none       &trans      &kp F7    &kp F8   &kp F9   &kp F10   &kp F11 &kp F12
                                         &kp LGUI     &trans       &trans    &none    &kp SPACE   &kp PG_UP   &kp PG_DN   &trans    &trans   &kp DEL
             >;
         };
@@ -55,14 +55,14 @@
         label = "Raise";
 // -----------------------------------------------------------------------------------------
 // |  `   |  !  |  @  |  #  |  $  |  %  |                       |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |  `  |  _  |  =  |  [  |  ]  |                       |     |     |     |     |  \  |      |
-// | SHFT |  ~  |  -  |  +  |  {  |  }  |   |       || MO3  |   |     |     |     |     | "|" |      |
+// | CTRL |  `  |  _  |  =  |  [  |  ]  |                       |  (  |  )  | Pup |     |  \  |      |
+// | SHFT |  ~  |  -  |  +  |  {  |  }  |   |       || MO3  |   |     |     | PDn |     | "|" |      |
 //                    | GUI |     |     |   | SPC   || SPC  |   |     | ALT |     |
                         
                         bindings = <
    &kp GRAVE &kp EXCL    &kp AT      &kp HASH    &kp DLLR  &kp PRCNT                                             &kp CARET &kp AMPS  &kp KP_MULTIPLY &none     &none     &kp BSPC
-   &kp LCTRL &kp GRAVE   &kp UNDER   &kp EQUAL   &kp LBKT  &kp RBKT                                              &kp LPAR  &kp RPAR  &none           &none     &kp BSLH  &none
-   &kp LSHFT &kp TILDE   &kp MINUS   &kp PLUS    &kp LBRC  &kp RBRC  &trans      &trans      &tog 3    &trans    &none     &none     &none           &none     &kp PIPE  &none
+   &kp LCTRL &kp GRAVE   &kp UNDER   &kp EQUAL   &kp LBKT  &kp RBKT                                              &kp LPAR  &kp RPAR  &kp PG_UP       &none     &kp BSLH  &kp PIPE
+   &kp LSHFT &kp TILDE   &kp MINUS   &kp PLUS    &kp LBRC  &kp RBRC  &trans      &trans      &tog 3    &trans    &none     &none     &kp PG_DN       &none     &none  &none
                                      &kp LGUI    &trans    &trans    &trans      &kp SPACE   &kp SPACE &trans    &trans    &kp RALT  &trans
             >;
         };
