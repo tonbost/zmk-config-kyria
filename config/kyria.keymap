@@ -14,6 +14,38 @@
 #define RAISE   2
 #define ADJUST  3
 
+
+
+&spi1 {
+	compatible = "nordic,nrf-spim";
+	status = "okay";
+	mosi-pin = <6>;
+	// Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
+	sck-pin = <5>;
+	miso-pin = <7>;
+
+	led_strip: ws2812@0 {
+		compatible = "worldsemi,ws2812-spi";
+		label = "WS2812";
+
+		/* SPI */
+		reg = <0>; /* ignored, but necessary for SPI bindings */
+		spi-max-frequency = <4000000>;
+
+		/* WS2812 */
+		chain-length = <10>; /* arbitrary; change at will */
+		spi-one-frame = <0x70>;
+		spi-zero-frame = <0x40>;
+	};
+};
+
+/ {
+	chosen {
+		zmk,underglow = &led_strip;
+	};
+};
+
+
 / {
 	keymap {
 		compatible = "zmk,keymap";
@@ -70,15 +102,15 @@
         adjust_layer {
         label = "Adjust";
 // -----------------------------------------------------------------------------------------
-// |       |     |     |     |     |     |                         |rgb bri up  |rgb HUI |     |     |     | rgb on/off |
-// | BTCLR | BT0 | BT1 | BT2 | BT3 | BT4 |                         |rgb bri down|rgb HUD |     |     |     |            |
-// | SHFT  |     |     |     |     |     |    |       ||      |    |            |        |     |     |     |            |
+// |       |     |     |     |     |     |                         |rgb bri up  |rgb HUI | RGB_SPI   | RGB_EFF   |     | rgb on/off |
+// | BTCLR | BT0 | BT1 | BT2 | BT3 | BT4 |                         |rgb bri down|rgb HUD | RGB_SPD   | RGB_EFR   |     |            |
+// | SHFT  |     |     |     |     |     |    |       || MO3  |    |            |        |           |           |     |            |
 //                     | GUI |     |     |    | SPC   || SPC  |    |            |        | ALT |
                         
                         bindings = <  
-   &none      &none        &none        &none        &none        &none                                                &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &none  &none  &none  &rgb_ug RGB_TOG
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                                         &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &none  &none  &none  &none
-   &none      &none        &none        &none        &none        &none        &none   &none       &tog 3      &none   &none            &none            &none  &none  &none  &none
+   &none      &none        &none        &none        &none        &none                                                &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_up RGB_SPI  &rgb_up RGB_EFF  &none  &rgb_ug RGB_TOG
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                                         &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_up RGB_SPD  &rgb_up RGB_EFR  &none  &none
+   &none      &none        &none        &none        &none        &none        &none   &none       &tog 3      &none   &none            &none            &none            &none            &none  &none
                                         &kp LGUI     &none        &none        &none   &kp SPACE   &kp SPACE   &none   &none            &kp RALT         &none
             >;
         };
