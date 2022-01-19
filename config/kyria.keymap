@@ -75,15 +75,15 @@
 		lower_layer {
 			label = "Lower";
 // -----------------------------------------------------------------------------------------
-// |  ESC |  1  |  2  |  3  |  4  |  5  |                           |  F1 |  F2 |  F3 |  F4 |  F5 | F6   |
-// | PSCRN|  6  |  7  |  8  |  9  |  0  |                           | LFT | DWN |  UP | RGT |     | "|"  |
-// | SHFT |     |     |     |     |     |    |     ||       |       |  F7 |  F8 |  F9 | F10 | F11 | F12  |
+// |  ESC |     |  7  |  8  |  9  |     |                           |  F1 |  F2 |  F3 |  F4 |  F5 | F6   |
+// | PSCRN|     |  4  |  5  |  6  |     |                           | LFT | DWN |  UP | RGT |     | "|"  |
+// | SHFT |     |  1  |  2  |  3  |  0  |    |     ||       |       |  F7 |  F8 |  F9 | F10 | F11 | F12  |
 //                    | GUI |     |     |    | SPC || PG UP | PG DN |     |     | DEL |
                         
                         bindings = <
-   &kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                                                 &kp F1    &kp F2   &kp F3   &kp F4    &kp F5  &kp F6
-   &kp PSCRN  &kp N6       &kp N7       &kp N8       &kp N9       &kp N0                                                 &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &none   &kp PIPE
-   &kp LSHFT  &none        &none        &none        &none        &none     &none    &none       &none       &trans      &kp F7    &kp F8   &kp F9   &kp F10   &kp F11 &kp F12
+   &kp ESC    &none        &kp N7       &kp N8       &kp N9       &none                                                  &kp F1    &kp F2   &kp F3   &kp F4    &kp F5  &kp F6
+   &kp PSCRN  &none        &kp N4       &kp N5       &kp N6       &none                                                  &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &none   &kp PIPE
+   &kp LSHFT  &none        &kp N1       &kp N2       &kp N3       &kp N0    &none    &none       &none       &trans      &kp F7    &kp F8   &kp F9   &kp F10   &kp F11 &kp F12
                                         &kp LGUI     &trans       &trans    &none    &kp SPACE   &kp PG_UP   &kp PG_DN   &trans    &trans   &kp DEL
             >;
         };
@@ -109,7 +109,7 @@
 // -----------------------------------------------------------------------------------------
 // | BootLo |     |     |     | Out USB | Out BLE |                             |rgb bri up  |rgb HUI | RGB_SPI   | RGB_EFF   |        | rgb on/off |
 // | BTCLR  | BT0 | BT1 | BT2 | BT3     | BT4     |                             |rgb bri down|rgb HUD | RGB_SPD   | RGB_EFR   |        |            |
-// | reset   |     |     |     |         |         |      |       || MO3  |      |            |        |           |           | vcc on | vcc off    |
+// | reset  |     |     |     |         |         |      |       || MO3  |      |            |        |           |           | vcc on | vcc off    |
 //                      | GUI |         |         |      | SPC   || SPC  |      |            |        | ALT       |
                         
                         bindings = <  
