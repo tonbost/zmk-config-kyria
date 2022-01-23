@@ -99,7 +99,7 @@
                         bindings = <
    &kp GRAVE &kp EXCL    &kp AT      &kp HASH    &kp DLLR  &kp PRCNT                                             &kp CARET &kp AMPS  &kp KP_MULTIPLY &none     &none     &kp BSPC
    &kp LCTRL &kp GRAVE   &kp UNDER   &kp EQUAL   &kp LBKT  &kp RBKT                                              &kp LPAR  &kp RPAR  &kp PG_UP       &none     &kp BSLH  &kp PIPE
-   &kp LSHFT &kp TILDE   &kp MINUS   &kp PLUS    &kp LBRC  &kp RBRC  &trans      &trans      &tog 3    &trans    &none     &none     &kp PG_DN       &none     &none  &none
+   &kp LSHFT &kp TILDE   &kp MINUS   &kp PLUS    &kp LBRC  &kp RBRC  &trans      &trans      &tog 3    &trans    &none     &none     &kp PG_DN       &none     &none     &none
                                      &kp LGUI    &trans    &trans    &trans      &kp SPACE   &kp SPACE &trans    &trans    &kp RALT  &trans
             >;
         };
@@ -115,7 +115,7 @@
                         bindings = <  
    &bootloader &none        &none        &none        &out OUT_USB &out OUT_BLE                                         &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &none             &rgb_ug RGB_TOG
    &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                                         &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SPD  &rgb_ug RGB_EFR  &none             &none
-   &reset       &none        &none        &none        &none        &none        &none   &none       &tog 3      &none   &none            &none            &none            &none            &ext_power EP_ON  &ext_power EP_OFF
+   &reset      &none        &none        &none        &none        &none        &none   &none       &tog 3      &none   &none            &none            &none            &none            &ext_power EP_ON  &ext_power EP_OFF
                                          &kp LGUI     &none        &none        &none   &kp SPACE   &kp SPACE   &none   &none            &kp RALT         &none
             >;
         };
