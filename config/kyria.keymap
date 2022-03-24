@@ -70,7 +70,6 @@
 	&kp LSHFT &kp Z &kp X    &kp C    &kp V    &kp B         &kp LC(C)  &kp BSLH           &kp MINUS  &kp LC(V)   &kp N     &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
 	                         &kp LGUI &kp LALT &kp LCTRL     &mo 1      &kp RET            &kp SPACE  &mo 2       &kp RCTRL &kp RALT &kp RGUI
 			>;
-			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
 		
 		lower_layer {
@@ -79,9 +78,9 @@
 // |  ESC |     |  7  |  8  |  9  |     |                           |  F1 |  F2 |  F3 |  F4 |  F5 | F6   |
 // | PSCRN|     |  4  |  5  |  6  |     |                           | LFT | DWN |  UP | RGT |     | "|"  |
 // | SHFT |     |  1  |  2  |  3  |  0  |    |     ||       |       |  F7 |  F8 |  F9 | F10 | F11 | F12  |
-//                    | GUI |     |     |    | SPC || PG UP | PG DN |     |     | DEL |
+//                    | GUI |     |     |    | RET || PG UP | PG DN |     |     | DEL |
                         
-                        bindings = <
+            bindings = <
    &kp ESC    &none        &kp N7       &kp N8       &kp N9       &none                                                  &kp F1    &kp F2   &kp F3   &kp F4    &kp F5  &kp F6
    &kp PSCRN  &none        &kp N4       &kp N5       &kp N6       &none                                                  &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &none   &kp PIPE
    &kp LSHFT  &none        &kp N1       &kp N2       &kp N3       &kp N0    &none    &none       &none       &trans      &kp F7    &kp F8   &kp F9   &kp F10   &kp F11 &kp F12
@@ -90,14 +89,14 @@
         };
 
         raise_layer {
-        label = "Raise";
+        	label = "Raise";
 // -----------------------------------------------------------------------------------------
 // |  `   |  !  |  @  |  #  |  $  |  %  |                       |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL |  `  |  _  |  =  |  [  |  ]  |                       |  (  |  )  | Pup |     |  \  |      |
 // | SHFT |  ~  |  -  |  +  |  {  |  }  |   | tog4  || tog3 |   |     |     | PDn |     | "|" |      |
 //                    | GUI |     |     |   | SPC   || SPC  |   |     | ALT |     |
                         
-                        bindings = <
+            bindings = <
    &kp GRAVE &kp EXCL    &kp AT      &kp HASH    &kp DLLR  &kp PRCNT                                             &kp CARET &kp AMPS  &kp KP_MULTIPLY &none     &none     &kp BSPC
    &kp LCTRL &kp GRAVE   &kp UNDER   &kp EQUAL   &kp LBKT  &kp RBKT                                              &kp LPAR  &kp RPAR  &kp PG_UP       &none     &kp BSLH  &kp PIPE
    &kp LSHFT &kp TILDE   &kp MINUS   &kp PLUS    &kp LBRC  &kp RBRC  &trans      &trans      &tog 3    &trans    &none     &none     &kp PG_DN       &none     &none     &none
@@ -106,21 +105,22 @@
         };
 
         adjust_layer {
-        label = "Adjust";
+        	label = "Adjust";
 // -----------------------------------------------------------------------------------------
 // | BootLo |     |     |     | Out USB | Out BLE |                             |rgb bri up  |rgb HUI | RGB_SPI   | RGB_EFF   |        | rgb on/off |
 // | BTCLR  | BT0 | BT1 | BT2 | BT3     | BT4     |                             |rgb bri down|rgb HUD | RGB_SPD   | RGB_EFR   |        |            |
 // | reset  |     |     |     |         |         |      | tog4  || tog3 |      |            |        |           |           | vcc on | vcc off    |
 //                      | GUI |         |         |      | SPC   || SPC  |      |            |        | ALT       |
                         
-                        bindings = <  
+            bindings = <  
    &bootloader &none        &none        &none        &out OUT_USB &out OUT_BLE                                         &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &none             &rgb_ug RGB_TOG
    &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                                         &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SPD  &rgb_ug RGB_EFR  &none             &none
-   &reset      &none        &none        &none        &none        &none        &none   &tog 4      &tog 3      &none   &none            &none            &none            &none            &ext_power EP_ON  &ext_power EP_OFF
+   &reset      &none        &none        &none        &none        &none        &none   &to 4       &tog 3      &none   &none            &none            &none            &none            &ext_power EP_ON  &ext_power EP_OFF
                                          &kp LGUI     &none        &none        &none   &kp RET     &kp SPACE   &none   &none            &kp RALT         &none
             >;
         };
 
+////////////////////
 		colemak_layer {
 			label = "Colemak";
 // ---------------------------------------------------------------------------------------------------------------------------------
@@ -130,12 +130,15 @@
 //                     | GUI  | LALT | LCTRL  |  MO1	| RETURN  |  |  SPACE  |  MO2    | RCTRL| RALT  | GUI   |
 			
 			bindings = <
-	&kp ESC   &kp Q &kp W    &kp F    &kp P    &kp G                                                              &kp J     &kp L    &kp U     &kp Y     &kp ;    &kp BSPC
-	&kp TAB   &kp A &kp R    &kp S    &kp T    &kp D                                                              &kp H     &kp N    &kp E     &kp I     &kp O    &kp SQT
-	&kp LSHFT &kp Z &kp X    &kp C    &kp V    &kp B         &kp LC(C)  &kp BLSH           &kp MINUS  &kp LC(V)   &kp K     &kp M    &kp COMMA &kp DOT   &kp FSLH &kp RSHFT
-	                         &kp LGUI &kp LALT &kp LCTRL     &mo 1      &kp RET            &kp SPACE  &mo 2       &kp RCTRL &kp RALT &kp RGUI
+	&kp ESC   &kp Q  &kp W   &kp F    &kp P    &kp G                                                        &kp J     &kp L    &kp U     &kp Y   &kp SEMI &kp BSPC
+	&kp TAB   &kp A  &kp R   &kp S    &kp T    &kp D                                                        &kp H     &kp N    &kp E     &kp I   &kp O    &kp SQT
+	&kp LSHFT &kp Z  &kp X   &kp C    &kp V    &kp B       &kp LC(C)  &kp BSLH       &kp MINUS  &kp LC(V)   &kp K     &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+	                         &kp LGUI &kp LALT &kp LCTRL   &trans     &kp RET        &kp SPACE  &trans      &kp RCTRL &kp RALT &kp RGUI
 			>;
 		};
+
+
+///////////////////
 
 	};
 };
